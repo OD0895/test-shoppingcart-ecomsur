@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from "react-redux";
 import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from './actions';
 import { StyledCart } from "../styles/components"
+//import cartlogo from '.svg';
+
 
 function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
   //  console.log(items)
@@ -23,9 +25,8 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                         <th> Name Product</th>
                         <th>Imagen</th>
                         <th>Price</th>
-                        <th>Quantity</th>
                         <th>Price</th>
-                        <th></th>
+                        <th>Actions</th>
                     </tr>
                 {
                     ListCart.map((item,key)=>{
@@ -33,16 +34,15 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                             <tr key={key}>   
                             
                             <td>{item.name}</td>
-                            <td><img src={item.imageURL} style={{width:'150px',height:'150px'}}/></td>
+                            <td><img src={item.imageURL} style={{width:'150px', height:'150px'}} alt={item.name} /></td>
                             <td>{item.price} $</td>
-                            <td>
-                                    <span className="btn btn-primary" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}>-</span>
-                                    <span className="btn btn-info">{item.quantity}</span>
-                                    <span className="btn btn-primary" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}>+</span>
-                            </td>
+                            
                             <td>{ TotalPrice(item.price,item.quantity)} $</td>
                             <td>
-                            <span className="btn btn-danger" style={{margin:'2px'}} onClick={()=>DeleteCart(key)}>-</span>
+                                <a className="btn btn-primary" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}><i className="bi bi-cart-dash-fill"></i></a>
+                                <a className="btn btn-info">{item.quantity}</a>
+                                <a className="btn btn-primary" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}> <i className="bi bi-cart-plus-fill"></i></a>
+                                <a className="btn btn-danger" style={{margin:'2px'}} onClick={()=>DeleteCart(key)}> <i className="bi bi-cart-x-fill"></i> </a>
                             </td>
                         </tr>
                         )
@@ -50,7 +50,7 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                          
                 }
                 <tr>
-                    <td colSpan="5">Total Carts</td>
+                    <td colSpan="4">Total</td>
                     <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
                 </tr>
                 </tbody>

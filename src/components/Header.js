@@ -14,16 +14,14 @@ export class Header extends Component {
                 <nav>
                     <ul>
                     <MenuItem margin>
-                        <Link to="/">Store</Link>
+                        <Link to="/"><span> Store <i className="bi bi-house-fill"></i> </span>  </Link>
                     </MenuItem>
                     <MenuItem>
                         <Link to="/carts">
                             <span>
                             Shopping Cart
-                                <img
-                                    src="https://i.postimg.cc/L6wpMxLt/cart.png"
-                                    alt="cartlogo"
-                                />
+                            
+                                <i className="bi bi-cart4"></i>
                                 {this.props.numberCart}
                             </span>
 

@@ -25,7 +25,7 @@ export class Product extends Component {
                                 <img src={item.imageURL} />
                                 <p>{item.name}</p>
                                 <small> $ {item.price}</small>
-                                <span className="badge badge-primary" style={{cursor:'pointer'}} onClick={()=>this.props.AddCart(item)}>Add to Cart →</span>
+                                <span className="badge badge-primary" style={{cursor:'pointer'}} onClick={()=>this.props.AddCart(item)}>Add to Cart <i className="bi bi-cart-plus-fill"></i></span>
                             </article>
                         ))
                     }
