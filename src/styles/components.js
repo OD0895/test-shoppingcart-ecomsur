@@ -331,11 +331,12 @@ export const MenuItem = styled.li`
 export const Footer = styled.footer`
   background-color: ${colors.darkBlue};
   color: white;
-  display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  position: relative;
+  display: flex;
+  position: fixed;
   bottom: 0;
   a {
     color: ${colors.green};
