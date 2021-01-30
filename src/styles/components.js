@@ -201,9 +201,8 @@ export const StyledProducts = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     padding: 0;
     ${above.large`
-      padding: 0 1rem;
       grid-gap: 3rem;
-      padding: 0 10rem;
+      padding: 0rem 6rem 6rem 6rem;
     `};
   }
 `
@@ -275,6 +274,10 @@ export const StyledCart = styled.div`
     color: #959595;
     margin: 0;
     border: none;
+    text-align: center;
+  }
+  & td {
+    text-align: center;
   }
   & img {
     vertical-align: middle;
